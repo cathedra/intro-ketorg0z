@@ -1,3 +1,5 @@
+## Домашнее задание на 03.11 в папке 0311
+* Файл Codecademy.png - скриншот выполненных уроков на Codecademy
 ## Домашнее задание на 30.10 в папке 3010
 * Файл styles-selectors-1.html - задание "styles-selectors-1", криво, но лучше не придумал пока
 * Файл styles-selectors-2.html - задание "styles-selectors-2"
