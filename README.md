@@ -1,5 +1,7 @@
 ## Домашнее задание на 03.11 в папке 0311
 * Файл Codecademy.png - скриншот выполненных уроков на Codecademy
+* Селектор '.forecast-briefly__temp_day span:nth-child(2), .forecast-briefly__temp_day span:nth-child(3)' на https://yandex.ru/pogoda/moscow получает температуру и '°' в прогнозе
+* Селектор '.value  .maxt  .unit_temperature_c' на https://www.gismeteo.ru/weather-moscow-4368/10-days/ получает температуру по Цельсию в прогнозе на 10 дней
 ## Домашнее задание на 30.10 в папке 3010
 * Файл styles-selectors-1.html - задание "styles-selectors-1", криво, но лучше не придумал пока
 * Файл styles-selectors-2.html - задание "styles-selectors-2"
