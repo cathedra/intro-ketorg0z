@@ -1,3 +1,5 @@
+## Домашнее задание на 06.11 в папке 0611
+* Скриншоты последнего задания в CSS - Transitions и выполнения всех уроков.
 ## Домашнее задание на 03.11 в папке 0311
 * Файл Codecademy.png - скриншот выполненных уроков на Codecademy
 * Селектор '.forecast-briefly__temp_day span:nth-child(2), .forecast-briefly__temp_day span:nth-child(3)' на https://yandex.ru/pogoda/moscow получает температуру и '°' в прогнозе
