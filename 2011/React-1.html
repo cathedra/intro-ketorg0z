@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    </head>
+    <body> 
+        <div id="react-root"></div>
+        <script type="text/babel">
+            class HelloGoodbye extends React.Component {
+                constructor(){
+                    super();
+                    this.state = {
+                        what: "Goodbye",
+                        count: 0
+                    };
+                    this.updateMessage = this.updateMessage.bind(this);
+                    this.resetCounter = this.resetCounter.bind(this);
+                }
+
+                updateMessage() {
+                    if (this.state.what == "Hello") {
+                        this.setState( {what: "Goodbye", count: this.state.count + 1} );
+                    } else {
+                        this.setState( {what: "Hello", count: this.state.count + 1} );
+                    }
+                }  
+
+                resetCounter() {
+                    this.setState( {count: 0} );
+                }  
+
+                render() {
+                    return (
+                        <div>
+                            <h1>{this.state.what}, {this.props.who}!</h1>
+                            <h2> {this.state.count} </h2>
+                            <button onClick={this.updateMessage}>Click me!</button>
+                            <button onClick={this.resetCounter}>Reset</button>
+                        </div>
+                    )
+                }
+
+            }
+
+            function HelloWorld(props) {
+                return <h1>Hello, world!</h1>;
+            }
+
+            function GoodbyeWorld(props) {
+                return <h1>Goodbye, {props.name} {props.surname}!</h1>;
+            }
+
+            ReactDOM.render(
+                //<HelloWorld who="everyone" />, 
+                //<GoodbyeWorld name="everyone" surname="everyonish"/>,
+                <HelloGoodbye who = "human" />,
+                document.getElementById("react-root")
+            );            
+        </script>
+    </body>
+</html>

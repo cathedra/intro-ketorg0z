@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    </head>
+    <body> 
+        <div id="react-root"></div>
+        <script type="text/babel">
+            class LifecycleExampleComponent extends React.Component {
+
+                constructor (props) {
+                    super(props);
+                    this.state = {
+                        counter: 0
+                    };
+                    console.log('constructor(): props:', props);
+                }
+
+                getDerivedStateFromProps(props, state) {
+                    console.log('getDerivedStateFromProps(): props:', props, ', state:', state);
+                    console.log('getDerivedStateFromProps(): this.props:', this.props, ', this.state:', this.state);
+                    return null;
+                }
+
+                shouldComponentUpdate(nextProps, ) {
+                    console.log('getDerivedStateFromProps(): nextProps:', nextProps, ', nextState:', nextState);
+                    console.log('getDerivedStateFromProps(): this.props:', this.props, ', this.state:', this.state);
+                    return true;
+                }
+
+                getSnapshotBeforeUpdate(prevProps, prevState) {
+                    console.log('getDerivedStateFromProps(): prevProps:', prevProps, ', prevState:', prevState );
+                    console.log('getDerivedStateFromProps(): this.props:', this.props, ', this.state:', this.state);
+                }
+
+                componentDidMount() {
+                    setInterval(() => { this.setState({count: this.state.count + 1})}, 1000);
+                    console.log('componentDidMount(): this.props:', this.props, ', this.state:', this.state);
+                    clearInterval;
+                }
+
+                componentWillUnmount() {
+                    setInterval(() => { this.setState({count: this.state.count + 1})}, 1000);
+                    console.log('componentWillUnmount(): this.props:', this.props, ', this.state:', this.state);
+                    clearInterval;
+                }
+
+                render() {
+                    console.log('render(): this.props:', this.props, ', this.state:', this.state);
+                    //не понимаю почему count не выводится
+                    return (
+                        <div> 
+                            LifecycleExampleComponent
+                            <h1> {this.state.count} </h1>
+                        </div>
+                    )
+                }
+
+                static getDerivedStateFromError(error) {
+                    console.log('render(): error:', error, ', info:', info);
+                    return {};
+                }
+
+                componentDidCatch(error, info) {
+                    console.log('render(): error:', error, ', info:', info);
+                }
+
+
+            }
+
+            function HelloWorld(props) {
+                return <h1>Hello, world!</h1>;
+            }
+
+            function GoodbyeWorld(props) {
+                return <h1>Goodbye, {props.name} {props.surname}!</h1>;
+            }
+
+            ReactDOM.render(
+                <LifecycleExampleComponent />,
+                document.getElementById("react-root")
+            );            
+        </script>
+    </body>
+</html>
